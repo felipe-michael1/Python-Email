@@ -1,155 +1,151 @@
-# -PythonEmail
-Classe em Python para envio de emails. Classe de envio de emails simples que pode ser colocada em qualquer projeto em Python.
-Funciona nos seguintes clientes de e-mail:
-- Outlook
-- Gmail
+# 📧 PythonEmail
 
-<strong>DOCUMENTAÇÃO PARA ADICIONAR PORTAS (OUTLOOK):</strong>
+Classe em **Python** para **envio de e-mails**, simples, reutilizável e fácil de integrar em qualquer projeto Python.
 
-Se você quiser adicionar sua conta do Outlook.com para outro programa de email que ofereça suporte a POP ou IMAP, aqui estão as configurações manuais do servidor necessárias.
+Compatível com os principais provedores de e-mail:
 
-Observações: 
+* **Outlook**
+* **Gmail**
 
-O acesso pop & IMAP é desabilitado por padrão. Confira a seção abaixo sobre como habilitar o acesso POP ou IMAP no Outlook.com.
-Outlook.com requer o uso do Auth /OAuth2 moderno.  A auth básica está no processo de ser preterido do serviço Outlook.com.
-Servidores de entrada e saída são os mesmos.
+---
 
-Nome de usuário:
+## 🚀 Objetivo do Projeto
 
-Seu endereço de e-mail
+Este projeto tem como objetivo fornecer uma **classe genérica para envio de e-mails**, facilitando:
 
-Senha:
+* Automação de notificações
+* Envio de relatórios
+* Alertas de sistemas
+* Integração com aplicações Python
 
-Sua senha da conta microsoft. 
-Se sua senha não estiver sendo reconhecida ou se você quiser adicionar sua conta Outlook.com a um dispositivo inteligente como uma câmera de segurança doméstica, talvez você precise de uma senha do aplicativo. Saiba como adicionar sua conta Outlook.com a outro aplicativo de email ou dispositivo inteligente.
+---
 
-Servidor IMAP:
-outlook.office365.com
+## 🛠️ Tecnologias Utilizadas
 
-Porta IMAP:
-993
+* **Python 3**
+* **SMTP / POP / IMAP**
+* **SSL / TLS**
+* **OAuth2 (quando exigido pelo provedor)**
 
-Criptografia IMAP:
+---
 
-SSL/TLS
-Método de Autenticação:
-OAuth2/Modern Auth
+## 📬 Provedores Suportados
 
+### ✔ Outlook
 
-Nome do servidor POP:
-outlook.office365.com
+### ✔ Gmail
 
-Servidor POP:
-Porta POP:
-995
+---
 
-Criptografia POP:
-SSL/TLS
+## ⚙️ Configuração de E-mail – Outlook
 
-Método de Autenticação:
-OAuth2/Modern Auth
+Se você deseja adicionar sua conta **Outlook.com** a um aplicativo que utilize **POP ou IMAP**, utilize as configurações abaixo.
 
-Nome do servidor SMTP:
-smtp-mail.outlook.com
+### ⚠️ Observações Importantes
 
-Porta SMTP:
-587
+* POP e IMAP são **desabilitados por padrão**
+* Outlook exige **OAuth2 / Modern Authentication**
+* Autenticação básica está sendo descontinuada
+* Servidores de entrada e saída são os mesmos
 
-Criptografia SMTP:
-STARTTLS
+### 🔑 Credenciais
 
-Método de Autenticação:
-OAuth2/Modern Auth
+* **Usuário:** seu endereço de e-mail
+* **Senha:** senha da conta Microsoft
 
-<strong>DOCUMENTAÇÃO PARA ADICIONAR PORTAS (GMAIL):</strong>
+  > Em alguns casos, pode ser necessário gerar uma **senha de aplicativo**
 
-Configuração de cliente POP:
+---
 
-Abra o Gmail no computador.
-No canto superior direito, clique em Configurações Configurações e Ver todas as configurações.
-Clique na guia Encaminhamento e POP/IMAP.
-Na seção "Download POP", selecione Ativar POP para todos os e-mails ou Ativar POP para e-mails que chegarem a partir de agora.
-Na parte inferior da página, clique em Salvar alterações.
+### 📥 IMAP (Outlook)
 
-Depois, faça as alterações em sua classe:
+* Servidor: `outlook.office365.com`
+* Porta: `993`
+* Criptografia: `SSL/TLS`
+* Autenticação: `OAuth2 / Modern Auth`
 
-Servidor de recebimento de e-mails (POP):	
-pop.gmail.com
-Requer SSL: Sim
-Porta: 995
+---
 
-Servidor de envio de e-mails (SMTP)	
-smtp.gmail.com
-Requer SSL: Sim
-Requer TLS: Sim (se disponível)
-Requer autenticação: sim
-Porta para TLS/STARTTLS: 587
+### 📥 POP (Outlook)
 
-Configuração de cliente IMAP:
+* Servidor: `outlook.office365.com`
+* Porta: `995`
+* Criptografia: `SSL/TLS`
+* Autenticação: `OAuth2 / Modern Auth`
 
-Servidor IMAP: imap.gmail.com
-Porta: 993
-Método de criptografia: SSL/TLS
+---
 
-<hr />
+### 📤 SMTP (Outlook)
 
-Python class for sending emails. Simple email sending class that can be placed in any Python project. Works on the following email clients:
+* Servidor: `smtp-mail.outlook.com`
+* Porta: `587`
+* Criptografia: `STARTTLS`
+* Autenticação: `OAuth2 / Modern Auth`
 
-Outlook
-Gmail
+---
 
-<strong>DOCUMENTATION FOR ADDING PORTS (OUTLOOK):</strong>
+## ⚙️ Configuração de E-mail – Gmail
 
-If you want to add your Outlook.com account to another email program that supports POP or IMAP, here are the manual server settings required.
+### 🔧 Habilitar POP no Gmail
 
-Notes:
+1. Abra o Gmail no navegador
+2. Clique em **Configurações**
+3. Vá em **Ver todas as configurações**
+4. Acesse a aba **Encaminhamento e POP/IMAP**
+5. Ative o **POP**
+6. Salve as alterações
 
-POP & IMAP access is disabled by default. See the section below on how to enable POP or IMAP access in Outlook.com. Outlook.com requires the use of modern Auth/OAuth2. Basic auth is in the process of being deprecated from the Outlook.com service. Incoming and outgoing servers are the same.
+---
 
-Username:
+### 📥 POP (Gmail)
 
-Your email address
+* Servidor: `pop.gmail.com`
+* Porta: `995`
+* Criptografia: `SSL`
+* Autenticação: Sim
 
-Password:
+---
 
-Your Microsoft account password. If your password isn't being recognized, or if you want to add your Outlook.com account to a smart device like a home security camera, you may need an app password. Learn how to add your Outlook.com account to another email app or smart device.
+### 📤 SMTP (Gmail)
 
-IMAP Server: outlook.office365.com
+* Servidor: `smtp.gmail.com`
+* Porta: `587`
+* Criptografia: `TLS / STARTTLS`
+* Autenticação: Sim
 
-IMAP Port: 993
+---
 
-IMAP Encryption:
+### 📥 IMAP (Gmail)
 
-SSL/TLS Authentication Method: OAuth2/Modern Auth
+* Servidor: `imap.gmail.com`
+* Porta: `993`
+* Criptografia: `SSL/TLS`
 
-POP Server Name: outlook.office365.com
+---
 
-POP Server: POP Port: 995
+## 🧠 O que este projeto demonstra
 
-POP Encryption: SSL/TLS
+* Conhecimento em protocolos de e-mail
+* Integração com SMTP, POP e IMAP
+* Uso correto de SSL/TLS
+* Código reutilizável
+* Boa documentação técnica
+* Pronto para uso em projetos reais
 
-Authment Method: OAuth2/Modern Auth
+---
 
-SMTP Server Name: smtp-mail.outlook.com
+## 🚀 Possíveis Melhorias Futuras
 
-SMTP Port: 587
+* Suporte a anexos
+* Templates HTML
+* Logs de envio
+* Tratamento avançado de erros
+* Integração com filas (Celery / RabbitMQ)
 
-SMTP Encryption: STARTTLS
+---
 
-Authment Method: OAuth2/Modern Auth
+## 👤 Autor
 
-<strong>DOCUMENTATION FOR ADDING PORTS (GMAIL):</strong>
+Felipe
 
-POP Client Configuration:
-
-Open Gmail on your computer. In the top right corner, click Settings Settings and then See all settings. Click the Forwarding and POP/IMAP tab. In the "POP Download" section, select Enable POP for all mail or Enable POP for mail arriving from now on. At the bottom of the page, click Save Changes.
-
-Then, make the changes to your class:
-
-Incoming mail server (POP): pop.gmail.com Requires SSL: Yes Port: 995
-
-Outgoing mail server (SMTP) smtp.gmail.com Requires SSL: Yes Requires TLS: Yes (if available) Requires authentication: Yes Port for TLS/STARTTLS: 587
-
-IMAP client configuration:
-
-IMAP server: imap.gmail.com Port: 993 Encryption method: SSL/TLS
+Projeto desenvolvido para fins **educacionais e de portfólio**, com foco em **automação, integração e boas práticas em Python**.
